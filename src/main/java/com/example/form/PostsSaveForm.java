@@ -1,6 +1,6 @@
 package com.example.form;
 
-import com.example.domain.posts.Posts;
+import com.example.entity.posts.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

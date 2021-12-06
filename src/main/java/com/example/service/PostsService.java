@@ -1,7 +1,7 @@
 package com.example.service;
 
-import com.example.domain.posts.Posts;
-import com.example.domain.posts.PostsRepository;
+import com.example.entity.posts.Posts;
+import com.example.entity.posts.PostsRepository;
 import com.example.dto.PostsDto;
 import com.example.form.PostsSaveForm;
 import com.example.form.PostsUpdateForm;
