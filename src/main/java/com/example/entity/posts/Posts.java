@@ -1,12 +1,13 @@
-package com.example.domain.posts;
+package com.example.entity.posts;
 
-import com.example.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+
+import com.example.entity.BaseTimeEntity;
 
 @Getter
 @Setter

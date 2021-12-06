@@ -1,4 +1,4 @@
-package com.example.domain.posts;
+package com.example.entity.posts;
 
 import com.example.dto.PostsDto;
 import org.springframework.data.jpa.repository.JpaRepository;
