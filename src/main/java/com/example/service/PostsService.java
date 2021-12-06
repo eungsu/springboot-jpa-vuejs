@@ -17,15 +17,14 @@ public class PostsService {
     private final PostsRepository postsRepository;
 
     @Transactional
-    public Long save(PostsSaveForm postsSaveForm) {
-        return postsRepository.save(postsSaveForm.toEntity()).getId();
+    public void save(PostsSaveForm postsSaveForm) {
+        postsRepository.save(postsSaveForm.toEntity());
     }
 
     @Transactional
-    public Long update(Long id, PostsUpdateForm postsUpdateForm) {
+    public void update(Long id, PostsUpdateForm postsUpdateForm) {
         Posts posts = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다."));
         posts.update(postsUpdateForm.getTitle(), postsUpdateForm.getContent());
-        return id;
     }
 
     @Transactional
