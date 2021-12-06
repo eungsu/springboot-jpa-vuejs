@@ -7,8 +7,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <router-link class="nav-link active" aria-current="page" to="/">홈</router-link>
-          <router-link class="nav-link" to="/board/list">Features</router-link>
+          <router-link class="nav-link" :class="{active: $route.path == '/'}" aria-current="page" to="/">홈</router-link>
+          <router-link class="nav-link" :class="{active: $route.path == '/board/form'}" aria-current="page" to="/board/form">게시글 쓰기</router-link>
         </div>
       </div>
     </div>
