@@ -3,22 +3,22 @@
     <div class="col">
       <table class="table">
         <thead>
-          <tr class="d-flex">
-            <th class="col-2">번호</th>
-            <th class="col-6">제목</th>
-            <th class="col-2">작성자</th>
-            <th class="col-2">등록일</th>
+          <tr>
+            <th style="width: 15%;">번호</th>
+            <th style="width: 45%;">제목</th>
+            <th style="width: 20%;">작성자</th>
+            <th style="width: 20%;">등록일</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-if="!postsList.length" class="d-flex">
-            <td class="col-12 text-center">게시글이 없습니다.</td>
+          <tr v-if="!postsList.length">
+            <td class="text-center" colspan="4">게시글이 없습니다.</td>
           </tr> 
-          <tr v-else class="d-flex" v-for="(posts, index) in postsList" :key="index">
-            <td class="col-2">{{ posts.id }}</td>
-            <td class="col-6"><router-link :to="{name:'PostsDetail', params: {id: posts.id}}">{{ posts.title }}</router-link></td>
-            <td class="col-2">{{ posts.author }}</td>
-            <td class="col-2">{{ posts.createdDate }}</td>
+          <tr v-else v-for="(posts, index) in postsList" :key="index">
+            <td>{{ posts.id }}</td>
+            <td><router-link :to="{name:'PostsDetail', params: {id: posts.id}}">{{ posts.title }}</router-link></td>
+            <td>{{ posts.author }}</td>
+            <td>{{ posts.createdDate }}</td>
           </tr>
         </tbody>
       </table>

@@ -60,7 +60,7 @@ export default {
       PostsService.save(posts)
         .then((response) => {
           if (response.data.success) {
-            this.$router.push('/');
+            this.$router.push('/posts/list');
           } else {
             this.isFail = true;
             this.clearField();
