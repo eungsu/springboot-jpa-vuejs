@@ -12,5 +12,9 @@ const http = axios.create({
 export default {
   save(posts) {
     return http.post('/posts', posts);
+  },
+  findAll() {
+    return http.get("/posts");
   }
+
 }

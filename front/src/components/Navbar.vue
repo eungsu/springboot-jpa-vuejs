@@ -8,6 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <router-link class="nav-link" :class="{active: $route.path == '/'}" aria-current="page" to="/">홈</router-link>
+          <router-link class="nav-link" :class="{active: $route.path == '/posts/list'}" aria-current="page" to="/posts/list">게시글 목록</router-link>
           <router-link class="nav-link" :class="{active: $route.path == '/posts/form'}" aria-current="page" to="/posts/form">게시글 쓰기</router-link>
         </div>
       </div>
