@@ -2,6 +2,7 @@ package com.example.service;
 
 import com.example.entity.posts.Posts;
 import com.example.entity.posts.PostsRepository;
+import com.example.exception.PostsNotFoundException;
 import com.example.dto.PostsDto;
 import com.example.form.PostsSaveForm;
 import com.example.form.PostsUpdateForm;
@@ -23,19 +24,19 @@ public class PostsService {
 
     @Transactional
     public void update(Long id, PostsUpdateForm postsUpdateForm) {
-        Posts posts = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다."));
+        Posts posts = postsRepository.findById(id).orElseThrow(() -> new PostsNotFoundException(-4001, "해당 게시글이 없습니다."));
         posts.update(postsUpdateForm.getTitle(), postsUpdateForm.getContent());
     }
 
     @Transactional
     public void delete(Long id) {
-        Posts posts = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다."));
+        Posts posts = postsRepository.findById(id).orElseThrow(() -> new PostsNotFoundException(-4001, "해당 게시글이 없습니다."));
         postsRepository.delete(posts);
     }
 
     @Transactional(readOnly = true)
     public PostsDto findById(Long id) {
-        Posts entity = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다."));
+        Posts entity = postsRepository.findById(id).orElseThrow(() -> new PostsNotFoundException(-4001, "해당 게시글이 없습니다."));
         return new PostsDto(entity);
     }
 
