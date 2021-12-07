@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import boardRouters from './board'
+import postsRoutes from './posts'
 
 const routes = [
   {
@@ -7,7 +7,7 @@ const routes = [
     name: 'Home',
     component: () => import('../views/Home.vue')
   },
-  ...boardRouters
+  ...postsRoutes
 ]
 
 const router = createRouter({
