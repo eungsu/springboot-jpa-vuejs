@@ -15,6 +15,15 @@ export default {
   },
   findAll() {
     return http.get("/posts");
+  },
+  findById(id) {
+    return http.get(`/posts/${id}`)
+  },
+  delete(id) {
+    return http.delete(`/posts/${id}`)
+  },
+  update(posts) {
+    return http.put(`/posts/${posts.id}`, posts);
   }
 
 }

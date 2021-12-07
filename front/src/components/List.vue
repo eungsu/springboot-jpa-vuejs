@@ -16,7 +16,7 @@
           </tr> 
           <tr v-else v-for="(posts, index) in postsList" :key="index">
             <td>{{ posts.id }}</td>
-            <td><router-link :to="{name:'PostsDetail', params: {id: posts.id}}">{{ posts.title }}</router-link></td>
+            <td><router-link :to="`/posts/detail/${posts.id}`">{{ posts.title }}</router-link> <!--<router-link :to="{path:`/posts/detail/${posts.id}`}">{{ posts.title }}</router-link>--></td> 
             <td>{{ posts.author }}</td>
             <td>{{ posts.createdDate }}</td>
           </tr>

@@ -10,8 +10,13 @@ export default [
     component: () => import('../views/posts/PostsList.vue')
   },
   {
-    path: "/posts/detail",
+    path: "/posts/detail/:id",
     name: "PostsDetail",
     component: () => import('../views/posts/PostsDetail.vue')
+  },
+  {
+    path: '/posts/modify/:id',
+    name: "PostsModifyForm",
+    component: () => import('../views/posts/PostsModifyForm.vue')
   }
 ]
